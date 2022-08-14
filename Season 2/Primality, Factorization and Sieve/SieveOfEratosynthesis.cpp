@@ -9,11 +9,11 @@ void primeGenerate()
     sieve[2] = 1;
     for (int i = 4; i < N; i += 2)
         sieve[i] = 0;
-    for (int i = 3; i < N; i += 2)
+    for (int i = 3; i * i < N; i += 2)
     {
         if (sieve[i] == 1)
         {
-            for (int j = 2 * i; j < N; j += i)
+            for (int j = i * i; j < N; j += i)
                 sieve[j] = 0;
         }
     }
