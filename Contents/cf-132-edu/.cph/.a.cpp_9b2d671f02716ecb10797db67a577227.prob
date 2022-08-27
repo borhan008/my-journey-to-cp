@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"e:\\Journey\\Contents\\cf\\a.cpp","tests":[{"id":1661614984287,"input":"5\nrb\nbr\ncc\nwb\naa\naa\nab\ncd\nxy\nzx","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Contents\\cf\\a.cpp","group":"local","local":true}
