@@ -1,0 +1,1 @@
+{"name":"Local: CF1187B","url":"e:\\Journey\\Season 3\\Binary Search\\Problems\\CF1187B.cpp","tests":[{"id":1661666764736,"input":"9\narrayhead\n5\nay\nharry\nray\nr\nareahydra","output":"5\n6\n5\n2\n9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 3\\Binary Search\\Problems\\CF1187B.cpp","group":"local","local":true}
