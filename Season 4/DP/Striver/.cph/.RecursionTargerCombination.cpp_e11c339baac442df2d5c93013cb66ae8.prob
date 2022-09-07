@@ -1,0 +1,1 @@
+{"name":"Local: RecursionTargerCombination","url":"e:\\Journey\\Season 4\\DP\\Striver\\RecursionTargerCombination.cpp","tests":[{"id":1662517842824,"input":"4 7\n2 3 6 7","output":"2 2 2 1\n3 2 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\DP\\Striver\\RecursionTargerCombination.cpp","group":"local","local":true}
