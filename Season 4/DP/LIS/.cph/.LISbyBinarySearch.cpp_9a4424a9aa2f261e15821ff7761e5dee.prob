@@ -1,0 +1,1 @@
+{"name":"Local: LISbyBinarySearch","url":"e:\\Journey\\Season 4\\DP\\LIS\\LISbyBinarySearch.cpp","tests":[{"id":1663490553924,"input":"abcdabcde","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\DP\\LIS\\LISbyBinarySearch.cpp","group":"local","local":true}

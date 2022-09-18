@@ -1,0 +1,1 @@
+{"name":"Local: RodCutting","url":"e:\\Journey\\Season 4\\DP\\Luv\\Knapsack\\RodCutting.cpp","tests":[{"id":1662823066961,"input":"8\n1 5 8 9 10 17 17 20","output":"22"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\DP\\Luv\\Knapsack\\RodCutting.cpp","group":"local","local":true}

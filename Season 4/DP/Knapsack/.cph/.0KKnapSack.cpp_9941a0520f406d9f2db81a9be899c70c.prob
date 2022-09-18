@@ -1,0 +1,1 @@
+{"name":"Local: 0KKnapSack","url":"e:\\Journey\\Season 4\\DP\\Knapsack\\0KKnapSack.cpp","tests":[{"id":1662872906029,"input":"3 2 10\n3 30\n4 50\n5 60","output":"90"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\DP\\Knapsack\\0KKnapSack.cpp","group":"local","local":true}

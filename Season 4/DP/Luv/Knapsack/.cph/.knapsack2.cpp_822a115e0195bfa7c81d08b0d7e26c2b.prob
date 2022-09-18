@@ -1,0 +1,1 @@
+{"name":"Local: knapsack2","url":"e:\\Journey\\Season 4\\DP\\Luv\\Knapsack\\knapsack2.cpp","tests":[{"id":1662815628990,"input":"3 100000000\n3 30\n4 50\n5 60","output":"10"},{"id":1662816413687,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\DP\\Luv\\Knapsack\\knapsack2.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: lcsimplementation","url":"e:\\Journey\\Season 4\\DP\\LCS\\lcsimplementation.cpp","tests":[{"id":1662899285815,"input":"5\n1 2 3 4 2","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\DP\\LCS\\lcsimplementation.cpp","group":"local","local":true}
