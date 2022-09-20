@@ -1,0 +1,1 @@
+{"name":"Local: TriangleByTabulation","url":"e:\\Journey\\Season 4\\DP\\DP on Grids\\TriangleByTabulation.cpp","tests":[{"id":1663585496245,"input":"4\n   2\n  3 4\n 6 5 7\n4 1 8 3","output":"11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\DP\\DP on Grids\\TriangleByTabulation.cpp","group":"local","local":true}
