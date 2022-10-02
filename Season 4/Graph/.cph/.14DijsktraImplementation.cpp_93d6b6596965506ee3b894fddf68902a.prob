@@ -1,0 +1,1 @@
+{"name":"Local: 14DijsktraImplementation","url":"e:\\Journey\\Season 4\\Graph\\14DijsktraImplementation.cpp","tests":[{"id":1664376278023,"input":"9 9 0\n13 7 5\n7 13 6\n14 3 12","output":"0 1 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\Graph\\14DijsktraImplementation.cpp","group":"local","local":true}

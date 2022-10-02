@@ -1,0 +1,1 @@
+{"name":"Local: 5DetectCycleByBFS","url":"e:\\Journey\\Season 4\\Graph\\Problems\\5DetectCycleByBFS.cpp","tests":[{"id":1664208951126,"input":"5 4\n2 3\n3 4\n0 2\n2 4","output":"FOUND"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\Graph\\Problems\\5DetectCycleByBFS.cpp","group":"local","local":true}

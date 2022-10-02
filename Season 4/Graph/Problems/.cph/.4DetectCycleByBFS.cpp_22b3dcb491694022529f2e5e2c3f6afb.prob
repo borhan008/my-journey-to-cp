@@ -1,0 +1,1 @@
+{"name":"Local: 4DetectCycleByBFS","url":"e:\\Journey\\Season 4\\Graph\\Problems\\4DetectCycleByBFS.cpp","tests":[{"id":1664204453247,"input":"5 3\n2 3\n3 4\n0 2\n0 4","output":"XS"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\Graph\\Problems\\4DetectCycleByBFS.cpp","group":"local","local":true}

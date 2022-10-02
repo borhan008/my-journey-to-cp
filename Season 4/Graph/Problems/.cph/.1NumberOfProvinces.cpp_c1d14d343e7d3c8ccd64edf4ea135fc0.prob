@@ -1,0 +1,1 @@
+{"name":"Local: 1NumberOfProvinces","url":"e:\\Journey\\Season 4\\Graph\\Problems\\1NumberOfProvinces.cpp","tests":[{"id":1663999187089,"input":"6 3\n0 1\n2 3\n4 5","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\Graph\\Problems\\1NumberOfProvinces.cpp","group":"local","local":true}

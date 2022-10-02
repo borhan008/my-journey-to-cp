@@ -1,0 +1,1 @@
+{"name":"Local: RottenTomatos","url":"e:\\Journey\\Season 4\\Graph\\Problems\\RottenTomatos.cpp","tests":[{"id":1664035927504,"input":"4 3 0\n13 7 5\n7 13 6\n14 3 12\n15 6 16","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Season 4\\Graph\\Problems\\RottenTomatos.cpp","group":"local","local":true}
