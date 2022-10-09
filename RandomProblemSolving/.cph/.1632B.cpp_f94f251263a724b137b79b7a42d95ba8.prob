@@ -1,0 +1,1 @@
+{"name":"Local: 1632B","url":"e:\\Journey\\RandomProblemSolving\\1632B.cpp","tests":[{"id":1665311145848,"input":"5\n4\n4 2 1 3\n4 \n4 4 1 4","output":"0\n1\n1\n2\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\RandomProblemSolving\\1632B.cpp","group":"local","local":true}
