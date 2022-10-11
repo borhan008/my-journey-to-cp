@@ -19,7 +19,8 @@ int main()
             cin >> x;
             d[i] = x;
             a[i] = (i == 0 ? d[0] : d[i] + a[i - 1]);
-            if (i > 0 && a[i - 1] + d[i] != a[i - 1] - d[i] && a[i - 1] - d[i] >= 0)
+            if (i > 0 && a[i - 1] + d[i] 
+            != a[i - 1] - d[i] && a[i - 1] - d[i] >= 0)
             {
                 cnt = 1;
             }
