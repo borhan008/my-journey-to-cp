@@ -15,12 +15,43 @@ using namespace std;
 #define ss(x) scanf("%s", x)
 #define pi(x) printf("%d\n", x)
 #define pl(x) printf("%lld\n", x)
-#define ps(x) printf("%s\n", x)
+#define ps(x) printf("%s", x)
+
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
 
 void solve(){
-	ll i,j,k,l;
+	ll a,b;
+	cin >> a >> b;
+	if(a==b){
+		for(ll i=1; i<=(a+b); i++)
+		ps(i%2 == 0 ? "0" : "1");
+	}else {
+		ll i=0, j=0;
+		ll last=1;
+		while(i<a || j<b){
+			if(i<a && last==0 && j <b){
+				cout << "1";
+				j++;
+				last=1;
+			}
+			else if(i<a && last==1 && j<b){
+				cout << "0";
+				i++;
+				last=0;
+			}
+			else if(i<a){
+				cout << "0";
+				i++;
+				
+			}else{
+				cout << "1";
+				j++;
+			}
+		}
+	
+	}
+	cout << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

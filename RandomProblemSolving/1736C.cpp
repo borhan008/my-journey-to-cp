@@ -19,8 +19,28 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
 
+vi a((int)1e6, 0);
+
 void solve(){
-	ll i,j,k,l;
+	ll n,x;
+	cin >> n;
+	for(ll i=0; i<n; i++){
+		cin >> x;
+		a[i]=x;
+	}
+	ll count =0;
+	ll lastCount = 0;
+	for(ll i=0; i<n; i++){
+		if(lastCount <= 2) lastCount=0;
+		else lastCount--;
+		for(ll j=i+lastCount; j<n; j++){
+			if(j-i+1 > a[j]) break;
+			lastCount++;
+		}
+		count+=lastCount;
+	}
+	pl(count);
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

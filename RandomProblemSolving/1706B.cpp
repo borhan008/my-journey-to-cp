@@ -18,9 +18,29 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-
 void solve(){
-	ll i,j,k,l;
+	ll n, x;
+	cin >> n;
+	vector<ll> a[n+5];
+
+	for(ll i=1; i<=n; i++){
+		sl(x);
+		a[x].push_back(i);
+	}
+	ll cnt=0;
+	for(ll i=1; i<=n; i++){
+		if(a[i].size() <= 1) cout << a[i].size() << " ";
+		else{
+			cnt = 1;
+			for(ll j=1; j<a[i].size(); j++){
+				ll g = a[i][j] - a[i][j-1];
+				g--;
+				if(g%2 == 0) cnt++;
+			}
+			cout << cnt << " ";
+		}
+	}
+	cout << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

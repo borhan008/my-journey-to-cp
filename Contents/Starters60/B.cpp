@@ -20,7 +20,22 @@ using namespace std;
 #define sortall(x) sort(all(x))
 
 void solve(){
-	ll i,j,k,l;
+	vector<ll> x(101,0);
+	ll a,m;
+	cin >> a;
+	for(ll i=0; i<a; i++){
+		cin >> m;
+		x[m] = x[m]+1;
+		
+	}
+	
+	sortall(x);
+	ll sum=0;
+	for(int i=0; i<100; i++){
+		if(x[i] == 0)continue;
+		sum+=x[i];
+	}
+	cout << sum << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

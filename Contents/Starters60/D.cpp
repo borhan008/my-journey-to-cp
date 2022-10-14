@@ -20,7 +20,21 @@ using namespace std;
 #define sortall(x) sort(all(x))
 
 void solve(){
-	ll i,j,k,l;
+	ll n, zero=0, one=0;
+	string s;
+	cin >> n;
+	cin >> s;
+	for(int i=0; i<n; i++){
+		if(s[i] == '0') zero++;
+		else one++;
+	}
+	
+	if(n%2 != 0) ps("YES");
+	else{
+		if(zero%2 == 0 && one%2==0) ps("YES");
+		else ps("NO");
+	}
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

@@ -20,7 +20,9 @@ using namespace std;
 #define sortall(x) sort(all(x))
 
 void solve(){
-	ll i,j,k,l;
+	ll n,k;
+	cin >> n >> k;
+	pl((n/k)*(n/k));
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

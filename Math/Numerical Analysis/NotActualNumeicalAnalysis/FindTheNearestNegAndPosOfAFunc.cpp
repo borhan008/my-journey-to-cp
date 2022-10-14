@@ -19,9 +19,14 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
 
-void solve(){
-	ll i,j,k,l;
+
+ll f(ll a){
+	return (a*a-2*a+5);
 }
+
+
+
+
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
 	return ((a*b)/m);
@@ -32,9 +37,7 @@ ll gcd(ll a, ll b){
 	return a==0 ? 0 : gcd(b, a%b);
 }
 int main(){
-	ll t=1;
-	cin >> t;
-	while(t--){
-		solve();
+
 	}
+	//cout << x << " " << a;
 }

@@ -18,9 +18,28 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-
+vi x(55,0);
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	cin >> n;
+	ll s;
+	ll max = INT_MAX;
+	ll maxi=-1;
+	for(ll i=1; i<=n; i++){
+		cin >> s;
+		x[i] = s;
+		if(max > x[i]){
+			maxi = i;
+			max = x[i];
+		}
+		
+	}
+	if(n%2 != 0){
+	ps("Mike");
+	}else{
+		ps(maxi%2 == 0 ? "Mike" : "Joe");
+	}
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

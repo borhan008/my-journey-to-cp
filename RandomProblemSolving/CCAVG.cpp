@@ -18,9 +18,22 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-
+vi a(105,0);
 void solve(){
-	ll i,j,k,l;
+	ll i,n,k,v,x, intAns, sum=0;
+	float ans;
+	cin >> n >> k >> v;
+	fo(i,n){
+		cin >> x;
+		a[i] = x;
+		sum+=x;
+	}
+	ans = (1.00*v*(k+n) - sum)/k;
+	intAns = (v*(k+n) - sum)/k;
+	if(ans == intAns && ans >= 1 && intAns >= 1)
+	pl(intAns);
+	else ps("-1");
+
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
