@@ -18,15 +18,15 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-
-
-ll f(ll a){
-	return (a*a-2*a+5);
+#define YES printf("YES\n");
+#define NO printf("NO\n");
+void solve(){
+	ll i;
+	cin >> i;
+	if(i%11 == 0) printf("YES\n");
+	else NO;
+	
 }
-
-
-
-
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
 	return ((a*b)/m);
@@ -37,7 +37,9 @@ ll gcd(ll a, ll b){
 	return a==0 ? 0 : gcd(b, a%b);
 }
 int main(){
-
+	ll t=1;
+	cin >> t;
+	while(t--){
+		solve();
 	}
-	//cout << x << " " << a;
 }

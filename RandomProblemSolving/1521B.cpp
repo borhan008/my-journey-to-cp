@@ -18,9 +18,30 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
+#define YES printf("YES\n");
+#define NO printf("NO\n");
 
+const ll prime = (ll)1e9+7;
 void solve(){
-	ll i,j,k,l;
+	ll n, i, x;
+	cin >> n;
+	vi v;
+	fo(i, n){
+		sl(x);
+		v.pb(x);
+	}
+	ll cnt=0;
+	for(i=1; i<n; i+=2){
+		cnt++;
+		ll temp = v[i];
+		v[i] = prime;
+		v[i-1] = min(temp,v[i-1]);
+	}
+	pl(cnt);
+	for(i=1; i<n; i+=2){
+		cout << i-1+1 << " " << i+1 << " "<< 
+		v[i-1] << " " << v[i]<< " " << endl;
+	}
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

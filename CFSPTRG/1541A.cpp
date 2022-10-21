@@ -21,7 +21,33 @@ using namespace std;
 #define YES printf("YES\n");
 #define NO printf("NO\n");
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	cin >> n;
+	vi v(n+1, 0);
+
+	for(ll i=1; i<=n; i++){
+		v[i]=i;
+	}
+	
+	
+	for(ll i=n; i>1; i-=2){
+		swap(v[i], v[i-1]);
+	}
+	if(n%2 == 0){
+	for(ll i=1; i<=n; i++){
+		cout << v[i] << " ";
+	}
+	}else{
+		cout << v[2] << " ";
+		cout << v[1] << " ";	
+		for(ll i=3; i<=n; i++){
+		cout << v[i] << " ";
+		}
+	
+	
+	}
+	cout << endl;
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

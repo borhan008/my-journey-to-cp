@@ -18,10 +18,13 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-#define YES printf("YES\n");
-#define NO printf("NO\n");
+
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	cin >> n;
+	ll ar[n];
+	for(ll i=0; i<n; i++) cin >> ar[i];
+	cout << ar[0] << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

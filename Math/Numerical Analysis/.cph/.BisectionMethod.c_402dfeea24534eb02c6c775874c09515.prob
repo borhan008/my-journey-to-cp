@@ -1,0 +1,1 @@
+{"name":"Local: BisectionMethod","url":"e:\\Journey\\Math\\Numerical Analysis\\BisectionMethod.c","tests":[{"id":1666201005054,"input":"2 3","output":"2.094543"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Journey\\Math\\Numerical Analysis\\BisectionMethod.c","group":"local","local":true}

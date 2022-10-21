@@ -10,6 +10,8 @@ using namespace std;
 #define mii map<ll,ll>
 #define inf 1e18
 #define fo(i,n) for(i=0; i<n; i++)
+#define fo2(i,n) for(i=0; i<n-1; i++)
+
 #define sl(x) scanf("%lld",&x)
 #define si(x) scanf("%d",&x)
 #define ss(x) scanf("%s", x)
@@ -21,7 +23,40 @@ using namespace std;
 #define YES printf("YES\n");
 #define NO printf("NO\n");
 void solve(){
-	ll i,j,k,l;
+	ll n,i;
+	
+	cin >> n;
+	ll arr[n];
+	ll start = 1e9;
+	ll j, k;
+	fo(i, n){
+		sl(arr[i]);
+	}
+	sort(arr, arr+n);
+	fo2(i,n){
+		if(abs(arr[i+1]-arr[i]) <start){
+			j=i;
+			k=i+1;
+			start = abs(arr[i+1]-arr[i]);
+		}
+	}
+	if(n==2){
+		cout << arr[0] << " " << arr[1] ;
+	}
+	else{
+	for( i=k; i<n; i++){
+		cout << arr[i] <<  " ";
+	}
+	for( i=0; i<=j; i++){
+		cout << arr[i] <<  " ";
+	}
+	}
+	
+	
+cout << endl;
+	
+	
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

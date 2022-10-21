@@ -18,10 +18,20 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-#define YES printf("YES\n");
-#define NO printf("NO\n");
+
 void solve(){
-	ll i,j,k,l;
+	ll n, k;
+	cin >> n >> k;
+	ll ar[n+1];
+	ll cnt=0;
+	for(ll i=1; i<=n; i++){
+		cin >> ar[i];
+	}
+	for(ll i=2; i<n; i++){
+		if(ar[i] > ar[i-1]+ar[i+1]) cnt++;
+	}	
+	if (k==1) pl(n%2 == 0 ? n/2 - 1 : n == 3 ? 1 : (n-1)/2);
+	else pl(cnt);
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

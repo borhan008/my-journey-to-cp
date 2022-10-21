@@ -18,7 +18,8 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-
+#define YES printf("YES\n");
+#define NO printf("NO\n");
 void solve(){
 	ll i,j,k,l;
 }

@@ -21,7 +21,51 @@ using namespace std;
 #define YES printf("YES\n");
 #define NO printf("NO\n");
 void solve(){
-	ll i,j,k,l;
+	ll n, i=0;
+	cin >> n;
+	ll arr[n+2];
+	fo(i, n+2) cin >> arr[i];
+	sort(arr, arr+n+2);
+	ll sum = 0;
+	i=0;
+	fo(i, n) sum+=arr[i];
+	if(sum == arr[n+1] || sum == arr[n]){
+		fo(i,n) cout << arr[i] << " ";
+	}else{
+		ll flag = 0;
+		ll j, k;
+		i=0;
+		fo(i, n){
+			ll sum2 = sum - arr[i] + arr[n];
+			if(sum2 == arr[n+1]){
+				flag = 1;
+				j=i;
+				k=n+1;
+				break;
+			}
+		}
+		i=0;
+		fo(i, n){
+			ll sum2 = sum - arr[i] + arr[n+1];
+			if(sum2 == arr[n]){
+				flag = 1;
+				j=i;
+				k=n;
+				break;
+			}
+		}
+		
+		if(flag == 1){
+			fo(i, n+2){
+				if(i==j || i==k) continue;
+				cout << arr[i] << " ";
+			}
+		}else{
+			cout << -1;
+		}		
+		
+	}
+	cout << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
