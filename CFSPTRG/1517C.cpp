@@ -18,22 +18,32 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-#define YES printf("YES\n");
-#define NO printf("NO\n");
+#define YES printf("YES\n")
+#define NO printf("NO\n")
+#define allzero(x) memset(x,0, sizeof(x))
 void solve(){
-	ll i;
-	cin >> i;
-	if(i%11 == 0) YES
-	else if(i%111 == 0) YES
-	else{
-		while(i>0){
-			if(i%11 == 0 || i%111==0){
-				YES 
-				break;
+	ll  n,x;
+	cin>>n;
+	ll arr[n][n];
+	ll i=0;
+	allzero(arr);
+	fo(i,n){
+		cin >> x;
+		ll a=i;
+		ll b=i;
+		ll y=x;
+		while(x--){
+			arr[a][b]=y;
+			if(b!=0 && arr[a][b-1]==0){
+				b--;
 			}
-			i-=111;
+			else a++;
 		}
-		i<0 && NO
+	}
+	i=0;
+	fo(i,n){
+		for(ll j=0; j<=i; j++) cout << arr[i][j] << " ";
+		cout << endl;
 	}
 	
 }
@@ -48,7 +58,7 @@ ll gcd(ll a, ll b){
 }
 int main(){
 	ll t=1;
-	cin >> t;
+	//cin >> t;
 	while(t--){
 		solve();
 	}

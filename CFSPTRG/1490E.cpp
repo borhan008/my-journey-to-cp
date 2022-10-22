@@ -21,21 +21,42 @@ using namespace std;
 #define YES printf("YES\n");
 #define NO printf("NO\n");
 void solve(){
-	ll i;
-	cin >> i;
-	if(i%11 == 0) YES
-	else if(i%111 == 0) YES
-	else{
-		while(i>0){
-			if(i%11 == 0 || i%111==0){
-				YES 
-				break;
-			}
-			i-=111;
-		}
-		i<0 && NO
-	}
+	ll n,i, sum=0;
+	cin >> n;
+	ll arr[n];
+	vector<pair<ll, ll>> x;
 	
+	i=0;
+	fo(i,n){
+		 cin >> arr[i];
+		 x.pb({arr[i], i+1});
+		 sum+=arr[i];
+	}
+	sort(x.begin(), x.end());
+	//ll psum[n];
+	//psum[0] = arr[0];
+	//for(i=1; i<n; i++) psum[i] = psum[i-1]+arr[i];
+	//bool ans[n];
+	//fo(i,n) ans[i]=false;
+	//ans[n-1]  = true;
+	ll cnt=1;
+	
+	for(i=n-2; i>=0; i--){
+		sum -= x[i+1].F;
+		if(x[i+1].F > sum) break;
+		else cnt++;
+	}
+	vi ans;
+	//ll cnt=0;
+	cout << cnt << endl;
+	for(ll j=n-1; j>=n-cnt; j--){
+		ans.pb(x[j].S);
+	}
+		sort(ans.begin(), ans.end());
+
+	//pl(cnt);
+	for(auto l : ans) cout << l << " ";
+	cout << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

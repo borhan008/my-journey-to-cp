@@ -21,21 +21,19 @@ using namespace std;
 #define YES printf("YES\n");
 #define NO printf("NO\n");
 void solve(){
-	ll i;
-	cin >> i;
-	if(i%11 == 0) YES
-	else if(i%111 == 0) YES
-	else{
-		while(i>0){
-			if(i%11 == 0 || i%111==0){
-				YES 
-				break;
-			}
-			i-=111;
+	ll n;
+	cin >> n;
+	if(n==1){
+		cout << "3";
+	}else{
+		cout << "2";
+		for(ll i=2; i<n; i++){
+			cout << "0";
 		}
-		i<0 && NO
+		cout << "1";
 	}
 	
+	cout <<endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

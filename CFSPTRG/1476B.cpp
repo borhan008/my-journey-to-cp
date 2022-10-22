@@ -21,21 +21,27 @@ using namespace std;
 #define YES printf("YES\n");
 #define NO printf("NO\n");
 void solve(){
-	ll i;
-	cin >> i;
-	if(i%11 == 0) YES
-	else if(i%111 == 0) YES
-	else{
-		while(i>0){
-			if(i%11 == 0 || i%111==0){
-				YES 
-				break;
-			}
-			i-=111;
-		}
-		i<0 && NO
+	ll i,k,n;
+	cin >> n >> k;
+	ll arr[n];
+	ll sum =0 ;
+	fo(i, n){
+		cin >> arr[i];
+		sum+=arr[i];
 	}
-	
+	ll newSum = sum;
+	ll sumDiff  = 0;
+	for(i=n-1; i>=1; i--){
+		newSum = newSum - arr[i];
+		float x =(float)1.000*arr[i]/newSum;
+		float per = (float)1.000*k/100;
+		if(x <= per) continue;
+		else {
+			ll newSum2 = ceil((100.000*1.000*arr[i])/k);
+			sumDiff = max(sumDiff, newSum2-newSum);
+		};
+	}
+	pl(sumDiff);
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
