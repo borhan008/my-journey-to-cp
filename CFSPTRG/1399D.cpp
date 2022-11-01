@@ -21,7 +21,39 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	string s;
+	cin >> n >> s;
+	
+	vi ans;
+	vi pos0, pos1;
+	
+	
+	for(ll i=0; i<n; i++){
+		ll newPos = pos0.size() + pos1.size();
+		if(s[i] == '0'){
+			if(pos1.empty()){
+				pos0.push_back(newPos);
+			}else{
+				newPos  = pos1.back();
+				pos1.pop_back();
+				pos0.push_back(newPos);
+			}
+		}else{
+			if(pos0.empty()){
+				pos1.push_back(newPos);
+			}else{
+				newPos = pos0.back();
+				pos0.pop_back();
+				pos1.push_back(newPos);
+			}
+		}
+		ans.pb(newPos);
+	}
+	cout << pos0.size() + pos1.size() << endl;
+	ll i=0;
+	fo(i, n) cout << ans[i]+1 << " ";
+	cout << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+ 
 using namespace std;
 #define ll long long
 #define F first
@@ -21,14 +22,45 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	cin >> n;
+	ll arr[n];
+	ll i=0;
+	fo(i, n) cin >> arr[i];
+	string s[n+1];
+	i=0;
+	fo(i, n){
+		string x;
+		if(i==0){
+			x.assign(50, 'a');
+			s[i] = x;
+			for(ll j=arr[i]; j<=50; j++){
+				x[j] = 'b';
+			}
+			s[i+1] =  x;
+		}else{
+			x=s[i];
+			char y = x[arr[i]] == 'a' ? 'b' : 'a';
+			for(ll j=arr[i]; j<=50; j++){
+				x[j] = y;
+			}	
+			s[i+1] =  x;
+			//s[i] = x;
+		}
+	}
+	
+		//cout << x << endl;
+	
+	for(auto l : s){
+		cout << l << endl;
+	}
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
 	return ((a*b)/m);
 }
-
-
+ 
+ 
 ll gcd(ll a, ll b){
 	return a==0 ? 0 : gcd(b, a%b);
 }

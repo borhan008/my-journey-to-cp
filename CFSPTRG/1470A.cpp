@@ -21,7 +21,29 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n, m;
+	sl(n);
+	sl(m);
+	ll k[n];
+	ll c[m];
+	ll i=0;
+	fo(i, n) sl(k[i]);
+	i=0;
+	fo(i, m) sl(c[i]);
+	sort(k, k+n);
+	ll sum  =0;
+	ll min =0;
+	for(i=n-1; i>=0; i--){
+		if(c[min] < c[k[i] - 1]){
+			sum += c[min]; 
+			min++;
+			
+		}else{
+			sum+=c[k[i] - 1];
+		}
+	}
+	pl(sum);
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

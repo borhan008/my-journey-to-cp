@@ -21,7 +21,44 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n, k, i;
+	cin >> n >> k;
+	if(n==k){
+		YES;
+		fo(i, n) cout << "1 " ;
+	}else if(k > n){
+		cout << "NO";
+	}
+	else if((n%2 == 1) && k%2==0){
+		cout << "NO";
+	}else if(n%2 == 1){
+		YES;
+		cout << (n-k +1 ) << " ";
+		ll x = k-1;
+		fo(i, x) cout << "1 ";
+	}else{
+		if((n - (k-1)*2) <= 0){
+			if((ll)(n-k +1) > 0 && (n-k+1)%2 != 0){
+				YES;
+			cout << (n-k +1 ) << " ";
+			ll x = k-1;
+			fo(i, x) cout << "1 ";
+			} else {
+				cout << "NO";
+			}
+			
+		}else{
+		YES;
+		cout << (n - (k-1)*2) << " ";
+		ll x = k-1;
+		fo(i, x) cout << "2 ";
+		}
+		
+	}
+	cout << endl;
+	
+	
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

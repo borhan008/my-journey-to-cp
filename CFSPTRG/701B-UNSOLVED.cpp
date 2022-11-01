@@ -18,10 +18,40 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
-#define YES printf("YES\n")
-#define NO printf("NO\n")
+#define YES printf("YES\n");
+#define NO printf("NO\n");
 void solve(){
-	ll i,j,k,l;
+	ll n, k, q, i, l , r;
+	cin >> n >> q >> k;
+	ll ar[n];
+	i=0;
+	fo(i, n) cin >> ar[i];
+	ll arSum[n];
+	arSum[0] = min(k, ar[1]-1)-1;
+
+	for( i=1; i<n-1; i++){
+		arSum[i] = arSum[i-1] + ar[i]-ar[i-1]-1;
+	}
+	arSum[n-1] = k -ar[r-2]-1+arSum[n-2];
+
+	while(q--){
+		cin >> l >> r;
+		if(l==r) cout << k-1 << endl;
+		else {
+			ll ans=0;
+			
+			ans+= ar[l]-2;
+			//cout << ar[l]-2 << " " << k - ar[r-2]-1   << endl;
+			ans += (k -ar[r-2]-1);
+
+			l++;
+			r--;
+			if(r>=l){
+				ans+=arSum[r]-arSum[l-1];
+			}
+			cout << ans << endl;
+		}
+	}
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
@@ -34,7 +64,7 @@ ll gcd(ll a, ll b){
 }
 int main(){
 	ll t=1;
-	cin >> t;
+	//cin >> t;
 	while(t--){
 		solve();
 	}

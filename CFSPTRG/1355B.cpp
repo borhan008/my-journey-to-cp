@@ -21,7 +21,22 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	cin >> n;
+	vi x(n, 0);
+	ll i=0, y;
+	fo(i, n) {
+		cin >> y;
+		x[y-1]++;
+	}
+	ll ans = 0;
+	i=0;
+	fo(i,n){
+		ans += (x[i]/(i+1));
+		if(i < n-1)
+			x[i+1] =  x[i+1] + x[i]%(i+1);
+	}
+	cout << ans << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
@@ -35,7 +50,9 @@ ll gcd(ll a, ll b){
 int main(){
 	ll t=1;
 	cin >> t;
+	
 	while(t--){
 		solve();
+		
 	}
 }

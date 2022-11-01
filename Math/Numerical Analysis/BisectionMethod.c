@@ -17,19 +17,21 @@ int main()
 			2) (0,-1), (-1,-2), ....
 			ig, yk why.
 		*/
-		if (f(a) * f(a - 1) < 0)
+		if (f(a) * f((a - (double)1.0000)) < 0)
 		{
+			printf("%lf %lf", f(a), f((a - (double)1.0000)));
 			x1 = a;
 			x2 = a - 1;
+
 			break;
 		}
-		if (f(b) * f(b + 1) < 0)
+		if (f(b) * f((b + (double)1.0000)) < 0)
 		{
 			x1 = b;
 			x2 = b + 1;
 			break;
 		}
-		a++;
+		a--;
 		b++;
 	}
 	// Step 2 & 3 : finding the root

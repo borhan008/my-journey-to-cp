@@ -20,9 +20,35 @@ using namespace std;
 #define sortall(x) sort(all(x))
 #define YES printf("YES\n")
 #define NO printf("NO\n")
-void solve(){
-	ll i,j,k,l;
+string s;
+
+ll func(ll l , ll r, char x){
+	if(l==r) return s[l]!=x; 
+	ll cnt = 0;
+	for(ll i=l; i<=(l+r)/2; i++){
+		if(s[i] != x) cnt++;
+	}
+	ll cnt2 = func((l+r)/2 + 1, r, x+1);
+	
+	ll cnt3=0;
+	for(ll i = (l+r)/2 + 1; i<=r; i++){
+		if(s[i] != x) cnt3++;
+	}
+	ll cnt4 = func(l, (l+r)/2, x+1);
+	
+	return min(cnt+cnt2, cnt3+cnt4);
 }
+
+
+void solve(){
+	ll n;
+	cin >> n >> s;
+	cout << func(0, n-1, 'a') << endl;
+
+}
+
+
+
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
 	return ((a*b)/m);

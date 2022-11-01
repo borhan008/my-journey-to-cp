@@ -11,6 +11,7 @@ using namespace std;
 #define inf 1e18
 #define fo(i,n) for(i=0; i<n; i++)
 #define sl(x) scanf("%lld",&x)
+#define sl2(x, y ) scanf("%lld %lld",&x, &y)
 #define si(x) scanf("%d",&x)
 #define ss(x) scanf("%s", x)
 #define pi(x) printf("%d\n", x)
@@ -20,8 +21,34 @@ using namespace std;
 #define sortall(x) sort(all(x))
 #define YES printf("YES\n")
 #define NO printf("NO\n")
+
 void solve(){
-	ll i,j,k,l;
+	ll n,w;
+	cin >> n >> w;
+	multiset<ll> x;
+	ll i=0,y;
+	fo(i, n){
+		cin >> y;
+		x.insert(y);	
+	}
+	ll m=w, h=1;
+	while(!x.empty()){
+		auto itr = x.upper_bound(m);
+		if(itr == x.begin()){
+			m=w;
+			h++;
+		}
+		else{
+			itr--;
+			m -=( *itr);
+			x.erase(itr);
+			
+		}
+	}
+	cout << h << endl;
+
+	
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

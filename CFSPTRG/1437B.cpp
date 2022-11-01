@@ -21,7 +21,14 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	int n;
+	cin >> n;
+	string s;
+	cin >> s;
+	ll ans=0;
+	ll i;
+	fo(i, n) ans = ans + (s[i] == s[i+1]);
+	cout << ceil(ans*1.0000/2) << endl;
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

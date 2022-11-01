@@ -1,7 +1,19 @@
 #include <stdio.h>
 #include <math.h>
-#define f(x) (x * x * x - 2 * x - 5)
 
+#define f(x) (x * x * x + x * x - 1)
+#define phi(x) 1 / sqrt(1 + x)
+#define diffPhi(x) (0.5 / sqrt(1 + x))
+
+/*
+y = x^3 - 2x - 5, is unsolvable by Iteration method.
+idky.
+
+#define f(x) (x * x * x - 2* x - 5)
+#define phi(x) 5/(x*x - 2)
+#define diffPhi(x)(10*x/((x*x - 2)*(x*x - 2)))
+
+*/
 int main()
 {
 	double a = 0, b = 0;
@@ -35,21 +47,27 @@ int main()
 		b++;
 	}
 	// Step 2 & 3 : finding the root
-
 	// we'll just jot down the steps which are written on the blog
 	double ans = 1e9; // Just assume a number which can never be the answer
-	while (1)
+	double x0 = (x1 + x2) / 2;
+
+	if (abs(diffPhi(x0)) < 1)
 	{
-		double prevAns = ans;
-		double x = ((x1 * f(x2) - x2 * f(x1)) / (f(x2) - f(x1)));
-		ans = x;
-		x1 = x2;
-		x2 = x;
-		// Calculating the the  literation of last two answer
-		if (fabs((prevAns) - (ans)) <= 0.001)
+		while (1)
 		{
-			break;
+			double xn = phi(x0);
+			if (fabs(xn - x0) <= 0.001)
+			{
+				ans = xn;
+				break;
+			}
+			x0 = xn;
 		}
+	}
+	else
+	{
+		printf("NOT FOUND");
+		return 0;
 	}
 
 	// Printing the answer

@@ -21,7 +21,28 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	sl(n);
+	ll i=0;
+	ll a[n];
+	string s;
+	fo(i, n) sl(a[i]);
+	cin >> s;
+	map<ll, char> x;
+	i=0;
+	ll flag=0;
+	fo(i,n){
+		if(x[a[i]]){
+			if(x[a[i]] != s[i]){
+				flag=1;
+				break;
+			}
+		}else{
+			x[a[i]] = s[i];
+		}
+	}
+	(flag==0?YES:NO);
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
