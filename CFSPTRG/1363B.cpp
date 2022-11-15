@@ -9,7 +9,7 @@ using namespace std;
 #define vi vector<ll>
 #define mii map<ll,ll>
 #define inf 1e18
-#define fo(i,n) for(i=0; i<n; i++)
+#define fo(i,n) for(ll i=0; i<n; i++)
 #define sl(x) scanf("%lld",&x)
 #define si(x) scanf("%d",&x)
 #define ss(x) scanf("%s", x)
@@ -20,34 +20,17 @@ using namespace std;
 #define sortall(x) sort(all(x))
 #define YES printf("YES\n")
 #define NO printf("NO\n")
-
-
-ll bs_sqrt(ll x) {
-  ll left = 0, right = 2000000123;
-  while (right > left) {
-      ll mid = (left + right) / 2;
-      
-      if (mid * mid > x) right = mid;
-      else left = mid + 1;
-  }
-  return left - 1;
-}
-
-ll func(ll n){
-    ll ans=3*(x-1);
-    if(n>=x*x+2*x)ans+=3;
-    else if(n>=x*x+x)ans+=2;
-    else if(n>=x*x)ans+=1;
-    return ans;
-}
 void solve(){
-	ll l,r;
-	cin >> l >> r;
-	ll ans =  func(r) - func(l-1);
+	string s;
+	cin >> s;
+	ll n =s.length();
+	ll ans = 1e6;
+	for(ll i =0; i<n; i++){
+ ll counts = count(s.begin(), s.end() - s.length() + i, '0') + count(s.begin() + i + 1, s.end(), '1');
+ll counts2 = count(s.begin(), s.end() - s.length() + i, '1') + count(s.begin() + i + 1, s.end(), '0');
+		 ans =min(counts, min(counts2, ans));
+	}
 	cout << ans << endl;
-	
-;
-	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
