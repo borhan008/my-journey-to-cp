@@ -21,7 +21,48 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	string s;
+	cin >> s;
+	for(ll i=0; i<s.size(); i++){
+		string temp1 = "";
+	
+		for(ll j=i; j<i+2; j++){
+			if(j >= s.size()) break;
+			temp1 += s[j];
+		}
+		string temp2 = "";
+		for(ll j=i; j<i+4; j++){
+			if(j >= s.size()) break;
+			temp2 += s[j];
+		}
+				
+		if(s.size() == 1) {
+			if(s != "Y" && s!="e" && s!="s"){
+				NO;
+				return;
+			}
+		}
+		else if(temp2.size() == 3 && temp2 != "Yes" && 
+		temp2 != "esY" && temp2 != "sYe"){
+			NO;
+			return;
+			
+		}
+		else if(
+		  
+	 temp1 != "Ye" 
+		 && temp1 != "sY" 
+		 && temp1 != "es"
+		
+		  && temp1.size() == 2 ){
+		 	
+			NO;
+			return;
+		}
+		
+	}
+	YES;
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

@@ -21,7 +21,18 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n,m,k;
+	cin >> n >> m >> k;
+	if(m < n-1LL) NO;
+	else if(m > n*(n-1LL)/2) NO;
+	else if(m == n*(n-1LL)/2 && k > 2) YES;
+	else if(n==1 && k > 1) YES;
+	
+	else if(m==n-1LL && k > 3) YES;
+	else if(k > 3) YES;
+	else NO;
+	
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

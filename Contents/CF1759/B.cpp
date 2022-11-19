@@ -19,9 +19,49 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define sortall(x) sort(all(x))
 #define YES printf("YES\n")
-#define NO printf("NO\n")
+#define NO printf("NO\n");
+bool x[101] = {false};
 void solve(){
-	ll i,j,k,l;
+	ll m,s;
+	cin >> m >> s;
+	vi v;
+	bool x[101] = {false};
+	ll n;
+	fo(i,m) {
+		
+		cin >> n;
+		x[n] = true;
+		v.pb(n);
+		
+	}
+	ll sum = 0;
+	for(ll i=1; i<=100; i++){
+		if(x[i] == false){
+			
+			sum += i;
+			v.pb(i);
+		}
+		if(sum == s){
+			sort(v.begin(), v.end());
+			//fo(j, (ll)v.size()) cout << v[j] << " ";
+
+			fo(j, (ll)v.size()-1) {
+				if(abs(v[j]-v[j+1]) != 1) {
+					NO;
+					return;
+				}
+			}
+			YES;
+			return;
+		}
+		if(sum > s) {
+			NO;
+			return;
+		}
+	}
+	
+	
+	
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

@@ -21,7 +21,27 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	string s1, s2;
+	cin >> s1 >> s2;
+	ll cnt=0;
+	if(s1.size() < s2.size()) {
+		pl(0);
+		return;
+	}
+	for(ll i=0; i < s1.length() - s2.size()+1; i++){
+		string temp = "";
+		ll x;
+		for(ll j=i; j<s2.size()+i; j++){
+			if(j >= s1.size()) continue;
+			temp+=s1[j];
+			x=j;
+		}
+		if(temp == s2) {
+			s1[x] = '#';
+			cnt++;
+		}
+	}
+	pl(cnt);
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
@@ -34,7 +54,7 @@ ll gcd(ll a, ll b){
 }
 int main(){
 	ll t=1;
-	cin >> t;
+	//cin >> t;
 	while(t--){
 		solve();
 	}
