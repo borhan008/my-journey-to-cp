@@ -26,8 +26,24 @@ void solve(){
 	ll n;
 	cin >> n;
 	ll a[n];
-	input(n, a);
-	output(n, a);
+	ll mx= 0;
+	ll sum=0;
+	for(ll i=0; i<n; i++){
+		cin >> a[i];
+		sum += a[i];
+		if(a[i] > mx) mx = a[i];
+	}
+	
+	//ll sum = accumulate(a, a+n, 0);
+	ll x= ceil((sum*1.0)/(n-1LL));
+	if(mx > x){
+		ll ans = (mx*(n - 1LL) - sum);
+		pl(ans);
+	}else{
+		ll ans = (x*(n - 1LL) - sum);
+		
+		pl(ans);
+	}
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);

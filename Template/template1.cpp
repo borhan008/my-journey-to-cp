@@ -9,7 +9,7 @@ using namespace std;
 #define vi vector<ll>
 #define mii map<ll,ll>
 #define inf 1e18
-#define fo(i,n) for(i=0; i<n; i++)
+#define fo(i,n) for(ll i=0; i<n; i++)
 #define sl(x) scanf("%lld",&x)
 #define si(x) scanf("%d",&x)
 #define ss(x) scanf("%s", x)
@@ -17,11 +17,17 @@ using namespace std;
 #define pl(x) printf("%lld\n", x)
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
+#define input(n,x) fo(i, n) sl(x[i])
+#define output(n, x) fo(i, n) printf("%lld ", x[i])
 #define sortall(x) sort(all(x))
-#define YES printf("YES\n");
-#define NO printf("NO\n");
+#define YES printf("YES\n")
+#define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n;
+	cin >> n;
+	ll a[n];
+	input(n, a);
+	output(n, a);
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
