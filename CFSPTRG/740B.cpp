@@ -17,11 +17,36 @@ using namespace std;
 #define pl(x) printf("%lld\n", x)
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
+#define input(n,x) fo(i, n) sl(x[i])
+#define output(n, x) fo(i, n) printf("%lld ", x[i])
 #define sortall(x) sort(all(x))
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll i,j,k,l;
+	ll n,m;
+	cin >> n >> m;
+	ll a[n];
+	ll preSum[n];
+	input(n, a);
+	preSum[0] = a[0];
+	for(ll i=1; i<n; i++){
+		preSum[i] = preSum[i-1] + a[i];
+	}
+	//output(n, preSum);
+	ll ans=0;
+	while(m--){
+		vi local;
+		ll x, y;
+		cin >> x >> y;
+		if(preSum[y-1] - ( x > 1 ? preSum[x-2] : 0) > 0 ){
+
+			ans += (preSum[y-1] - ( x > 1 ? preSum[x-2] : 0));
+			
+		}
+		
+	}
+	cout << ans;
+
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
@@ -34,7 +59,7 @@ ll gcd(ll a, ll b){
 }
 int main(){
 	ll t=1;
-	cin >> t;
+	//cin >> t;
 	while(t--){
 		solve();
 	}
