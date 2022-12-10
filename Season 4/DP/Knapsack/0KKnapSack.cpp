@@ -15,7 +15,8 @@ int func(int pos, int sum, int range)
         return 0;
     int ans = func(pos - 1, sum, range);
     if (sum - wt[pos] >= 0)
-        ans = max(ans, func(pos, sum - wt[pos], range + 1) + pr[pos]);
+        ans = max(ans, func(pos, sum - wt[pos], range + 1)
+         + pr[pos]);
 
     return ans;
 }

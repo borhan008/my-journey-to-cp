@@ -23,18 +23,27 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll n,t;
-	cin >> n >> t;
+	ll w,h,x1,y1,x2,y2,w1,h1;
+	cin >> w >> h >> x1 >> y1 >> x2 >> y2 >> w1 >> h1;
+	ll tw1 = abs(x1-x2);
+	ll th1 = abs(y1-y2);
+	if(tw1+w1 <= w || th1+h1 <= h){
+		ll ans1=INT_MAX;
+		ll ans2=INT_MAX;
+		if(tw1+w1 <= w){
+			ans1 = min(w1-x1, w1-(w-x2));
+			if(ans1 < 0) ans1=0;
+		}
+		if(th1+h1 <= h){
+			ans2 = min(h1-y1, h1-(h-y2));
+			if(ans2 < 0) ans2=0;
+		}
+		cout << min(ans1, ans2) << endl;
+	}else{
+		ps("-1");
+	}
 	
-	ll mx = (n-t+1)*(n-t)/2;
-	ll mn = (n%t)*(n/t)*((n/t) + 1)/2 
-	+ (t - (n%t))*(n/t)*((n/t)-1)/2;
 	
-	cout << mn << " " << mx;	
-
-		
-		
-
 }
 ll lcm(ll a, ll b){
 	ll m = gcd(a,b);
@@ -47,7 +56,7 @@ ll gcd(ll a, ll b){
 }
 int main(){
 	ll t=1;
-	//cin >> t;
+	cin >> t;
 	while(t--){
 		solve();
 	}

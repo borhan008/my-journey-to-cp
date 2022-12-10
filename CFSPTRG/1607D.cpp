@@ -18,36 +18,44 @@ using namespace std;
 #define ps(x) printf("%s\n", x)
 #define all(x) x.begin(), x.end()
 #define input(n,x) fo(i, n) sl(x[i])
-#define output(n, x) fo(i, n) printf("%lld ", x[i])
+#define output(x) fo(auto i : x) printf("%lld ", i)
 #define sortall(x) sort(all(x))
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll n,t;
-	cin >> n >> t;
-	
-	ll mx = (n-t+1)*(n-t)/2;
-	ll mn = (n%t)*(n/t)*((n/t) + 1)/2 
-	+ (t - (n%t))*(n/t)*((n/t)-1)/2;
-	
-	cout << mn << " " << mx;	
-
-		
-		
-
+	ll n;
+	cin >> n;
+	ll a[n];
+	string s;
+	input(n, a);
+	ll y=1;
+	cin >> s;
+	set<ll> x;
+	vi blue;
+	vi red;
+	fo(i, n){
+		if(s[i]=='B') blue.pb(a[i]);
+		else red.pb(a[i]);
+	}
+	sort(all(blue)); sort(all(red));
+	for(auto l:blue){
+		if(l >= y){
+			x.insert(y);
+			y++;
+		}
+	}
+	for(auto l:red){
+		if(l <=y) {
+			x.insert(y);
+			y++;
+		}
+	}
+	((ll)x.size()==n?YES:NO);
 }
-ll lcm(ll a, ll b){
-	ll m = gcd(a,b);
-	return ((a*b)/m);
-}
 
-
-ll gcd(ll a, ll b){
-	return a==0 ? 0 : gcd(b, a%b);
-}
 int main(){
 	ll t=1;
-	//cin >> t;
+	cin >> t;
 	while(t--){
 		solve();
 	}

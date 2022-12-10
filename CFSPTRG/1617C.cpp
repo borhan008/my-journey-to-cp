@@ -23,31 +23,51 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 void solve(){
-	ll n,t;
-	cin >> n >> t;
-	
-	ll mx = (n-t+1)*(n-t)/2;
-	ll mn = (n%t)*(n/t)*((n/t) + 1)/2 
-	+ (t - (n%t))*(n/t)*((n/t)-1)/2;
-	
-	cout << mn << " " << mx;	
-
+	ll n;
+	cin>>n;
+	mii a,b;
+	ll x;
+	fo(i, n){
+		cin >> x;
+		a[x]++;
+	}
+	vi c;
+	for(auto l:a){
 		
-		
+		if(l.F <=n){
+			for(ll i=0; i<l.S-1; i++) c.pb(l.F);
+			b[l.F]=1;
+		}else {
+			for(ll i=0; i<l.S; i++) c.pb(l.F);
+		}
+	}
+	ll m=1;
+	ll ans=0;
+	
+	for(auto l:c){
+		for(ll i=m; i<=n; i++){
+			if(b[i]==1) m++;
+			else break;
+		}
+		ll z = (l-1)/2;
+		if(m <= z) {
+			ans++;
+			m++;
+		}else{
+			ps("-1");
+			return;
+		}
+	}
+	cout << ans << endl;
+
+	
+	
 
 }
-ll lcm(ll a, ll b){
-	ll m = gcd(a,b);
-	return ((a*b)/m);
-}
 
-
-ll gcd(ll a, ll b){
-	return a==0 ? 0 : gcd(b, a%b);
-}
 int main(){
 	ll t=1;
-	//cin >> t;
+	cin >> t;
 	while(t--){
 		solve();
 	}
