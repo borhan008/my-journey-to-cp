@@ -21,18 +21,24 @@ using namespace std;
 
 
 void solve(){
-	ll n;
-	cin >> n;
-	ll a[n];
-	input(n,a);
-	output(a);
+	ll n;cin >> n;
+	ll arr[n];
+	input(n,arr);
+	sort(arr, arr+n);
+	ll mn = arr[0];
+	ll mx = arr[n-1];
+	ll cnt = count(arr,arr+n, mn);
+	ll cnt2  = count(arr, arr+n, mx);
+	if(mx==mn) cout << cnt*(cnt-1) << endl;
+	else cout << cnt*cnt2*2 << endl;
+	 
 }
 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);  cout.tie(0);
     
- 	ll t=1; //cin >> t;
+ 	ll t=1; cin >> t;
  	while(t--) solve();
  	
 	return 0;

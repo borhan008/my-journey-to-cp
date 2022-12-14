@@ -23,16 +23,15 @@ using namespace std;
 void solve(){
 	ll n;
 	cin >> n;
-	ll a[n];
-	input(n,a);
-	output(a);
+	string x = to_string(n);
+	cout << (x.size()-1)*9 + (x[0]-'0') << endl;
 }
 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);  cout.tie(0);
     
- 	ll t=1; //cin >> t;
+ 	ll t=1; cin >> t;
  	while(t--) solve();
  	
 	return 0;

@@ -6,6 +6,7 @@ int dp[105][105];
 
 int func(int i, int j)
 {
+
     if (i == 0 && j == 0)
         return arr[i][j];
     if (i < 0 || j < 0)
@@ -14,8 +15,8 @@ int func(int i, int j)
     if (dp[i][j] != -1)
         return dp[i][j];
     int sum = arr[i][j] + func(i - 1, j);
-    sum = min(sum, func(i, j - 1) + arr[i][j]);
-    return dp[i][j] = sum;
+    int sum2 =  func(i, j - 1) + arr[i][j];
+    return dp[i][j] = min(sum,sum2);
 }
 
 int main()

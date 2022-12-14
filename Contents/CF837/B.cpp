@@ -21,18 +21,36 @@ using namespace std;
 
 
 void solve(){
-	ll n;
-	cin >> n;
-	ll a[n];
-	input(n,a);
-	output(a);
+	
+	ll n,m;
+	cin >> n >> m;
+	vi prev(n+5, -1);
+ 	for(ll i=1; i<=m; i++){
+		ll y,x;
+		cin >> x >> y;
+		if(x>y) swap(x,y);
+		prev[y] = max(prev[y], x);
+	}
+	ll last=1;
+	ll ans=0;
+	for(ll i=1; i<=n; i++){
+		last = max(last, prev[i]+1);
+		ans += (i-last+1);
+
+	}
+	       
+	printf("%lld\n", ans);
+
+	
+	
+	
 }
 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);  cout.tie(0);
     
- 	ll t=1; //cin >> t;
+ 	ll t=1; cin >> t;
  	while(t--) solve();
  	
 	return 0;

@@ -21,18 +21,32 @@ using namespace std;
 
 
 void solve(){
-	ll n;
-	cin >> n;
-	ll a[n];
-	input(n,a);
-	output(a);
+	ll n; cin >> n;
+	string s; cin >> s;
+	map<string, ll> ss;
+	string last="";
+	for(ll i=0; i<=n-2; i++){
+		string x = s.substr(i,2);
+		if(last==x){
+			last = " ";
+		}else{
+			ss[x]++;
+			last=x;
+		}
+	}
+	for(auto l:ss){
+		if(l.second >=  2){
+			YES; return;
+		}
+	}
+	NO;
 }
 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);  cout.tie(0);
     
- 	ll t=1; //cin >> t;
+ 	ll t=1; cin >> t;
  	while(t--) solve();
  	
 	return 0;

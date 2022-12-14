@@ -21,11 +21,37 @@ using namespace std;
 
 
 void solve(){
-	ll n;
-	cin >> n;
-	ll a[n];
-	input(n,a);
-	output(a);
+	ll n,a,b;
+	cin >> n >> a >> b;
+	if(n==1){
+		if(a==b) cout << 1 << endl;
+		else cout << 0 << endl;
+		cout << a << ":" << b;
+	}else{
+		cout <<( (a+b)<n ? n-(a+b) : 0 )<< endl;
+		while(n>1 && (a>0 || b>0)){
+			//cout << a << " " << b << endl;
+			if(a<=b && a>0) {
+				cout << "1:0" << endl;
+				a--;
+				n--;
+			}else if(b>0){
+				cout << "0:1" << endl;
+				b--;
+				n--;
+			}else if(a>=0){
+				cout << "1:0" << endl;
+				a--;
+				n--;
+			}
+			
+		}
+		while(n){ 
+			cout << a <<":"<<b << endl;
+			n--;
+		}
+	}
+	
 }
 
 int main(){

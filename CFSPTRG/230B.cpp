@@ -18,21 +18,51 @@ using namespace std;
 #define YES printf("YES\n")
 #define NO printf("NO\n")
 #define endl "\n"
+bool prime[1000000+50];
+void seive(){
+	prime[0]=true;
+	prime[1]=true;
+	
+	for(ll i=4; i<=(1e6)+49; i+=2) prime[i]=true;
+	for(ll i=3; i<=(ll)1e6+49; i+=2){
+		
+		if(!prime[i])
+		for(ll j=i*i; j<(ll)1e6+49; j+=(i)){
+			prime[j]=true;
+		}
+	}
+}
+
 
 
 void solve(){
 	ll n;
 	cin >> n;
-	ll a[n];
-	input(n,a);
-	output(a);
+	if(n==4) {
+		YES;
+		return;
+	}
+	if(n%2 == 0){
+		 NO;
+		 return;
+	}	
+	ll sq = sqrt(n);
+	float sq2 = sqrt(n*1.000);
+	if(sq != sq2) NO;
+	else {
+		if(!prime[sq] && sq*sq==n) YES;
+		else NO;
+	}
+	
+
+
 }
 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);  cout.tie(0);
-    
- 	ll t=1; //cin >> t;
+    seive();
+ 	ll t=1; cin >> t;
  	while(t--) solve();
  	
 	return 0;
