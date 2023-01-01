@@ -8,7 +8,7 @@ using namespace std;
 #define mp make_pair
 #define pii pair<ll,ll>
 #define vi vector<ll>
-#define mii map<ll,ll>
+#define mi map<ll,ll>
 #define inf 2e18
 #define fo(i,n) for(ll i=0; i<n; i++)
 #define all(x) x.begin(), x.end()
