@@ -2,9 +2,7 @@
 using namespace std;
 
 
-void dfs(vector<int> g[], int u,
-int parent, int start[], int end[],
-int &cnt){
+void dfs(vector<int> g[], int u, int parent, int start[], int end[],int &cnt){
 	start[u]=cnt++;
 	
 	for(int i=0; i<(int)g[u].size(); i++){
@@ -56,8 +54,7 @@ int main(){
 	int sz = n;
 	int start[sz];
 	int end[sz];
-	preProcess(edges, parent, 
-	start, end, n);
+	preProcess(edges, parent, start, end, n);
 	int t;
 	cin >> t;
 	while(t--){
