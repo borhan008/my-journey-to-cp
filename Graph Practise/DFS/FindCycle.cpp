@@ -28,8 +28,8 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	
-	std::freopen("cycle2.in", "r", stdin);
-	std::freopen("cycle2.out", "w", stdout);
+	//std::freopen("cycle2.in", "r", stdin);
+	//std::freopen("cycle2.out", "w", stdout);
 	cycle_start=-1;
 	int m,n; cin >> n >> m;
 

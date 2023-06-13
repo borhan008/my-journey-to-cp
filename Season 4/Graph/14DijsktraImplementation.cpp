@@ -20,7 +20,8 @@ void dijsktra(int s, vector<int> &dis, priority_queue<pair<int, int>, vector<pai
             {
 
                 pq.push({l.second + curDis, l.first});
-                dis[l.first] = l.second + curDis;
+                int x = l.second + curDis;
+                dis[l.first] =  x;
             }
         }
     }
@@ -30,7 +31,7 @@ int main()
 {
     int n, e, s;
     cin >> n >> e >> s;
-    vector<pair<int, int>> adj[n];
+    vector<pair<int, int>> adj[n+1];
     int x, y, wt;
     for (int i = 0; i < e; i++)
     {
