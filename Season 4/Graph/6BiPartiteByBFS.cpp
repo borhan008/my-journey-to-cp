@@ -33,7 +33,7 @@ int main()
 
     int node, edge;
     cin >> node >> edge;
-    vector<int> adj[node];
+    vector<int> adj[node+5];
     int x, y;
     for (int i = 0; i < edge; i++)
     {
@@ -41,9 +41,9 @@ int main()
         adj[x].push_back(y);
         adj[y].push_back(x);
     }
-    vector<int> colored(node, -1);
+    vector<int> colored(node+5, -1);
 
-    for (int i = 0; i < node; i++)
+    for (int i = 1; i <= node; i++)
     {
         if (colored[i] == -1)
         {
